@@ -1,0 +1,83 @@
+
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #FAFAFA;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-weight: lighter;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  color: deeppink;
+}
+
+
+.inputSection {
+
+
+padding: 10px;
+    display: flex;
+
+  max-height: 200vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputs {
+padding: 10px;
+    background: springgreen;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 70vw;
+    height: inherit;
+}
+
+input {
+    flex-wrap: wrap;
+    width: 100px;
+  height: 30px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+.addOption {
+  width: 100px;
+  height: 30px;
+  margin-top: 20px;
+    margin-left: 10px;
+  border: solid 2px deepskyblue;
+  color: deepskyblue;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  align-self: flex-end;
+}
+
+.resultSection {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+}
+
+.submit {
+    margin-top: 30px;
+  width: 100px;
+  height: 50px;
+  color:deeppink;
+  font-weight: bold;
+  font-size: 1em;
+  border: solid 2px deeppink;
+    align-items: center;
+}

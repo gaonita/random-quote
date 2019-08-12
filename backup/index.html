@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Help me choose</title>
-    <link href="./main.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="title">
@@ -19,27 +19,29 @@
     <div class="resultSection"></div>
     <button class="submit">Go!</button>
 
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
         $(function () {
-            $('.resultSection').hide()
+            $('.resultSection').hide();
 
             var add_option = function () {
                 $('.inputs').append('<input/>')
-            }
-            $('.addOption').click(add_option)
+            };
+            $('.addOption').click(add_option);
 
-            var options = []
+            var options = [];
+
             var submit = function() {
-                $('.inputSection').hide()
-                $('.resultSection').css('display', 'flex')
+                $('.inputSection').hide();
+                $('.resultSection').css('display', 'flex');
                 $('input').each(function () {
                     options.push($(this).val())
                 })
-                var winner = options[Math.floor(Math.random() * options.length)]
-                console.log(winner)
+
+                var winner = options[Math.floor(Math.random() * options.length)];
                 $('.resultSection').text(winner)
-            }
+            };
             $('.submit').click(submit)
         })
     </script>
