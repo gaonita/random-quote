@@ -51,7 +51,7 @@ class App extends React.Component{
             inputs.push(<input placeholder={"Enter option"} value={this.state.input} onChange={this.add} />);
             values.push(this.state.input)
         }
-console.log(values)
+console.log(values);
 
         if (!this.state.visibility) {
             return (
