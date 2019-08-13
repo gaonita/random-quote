@@ -15,11 +15,7 @@ class App extends React.Component{
 
         this.toggle = this.toggle.bind(this);
         this.add = this.add.bind(this);
-        this.chooseOne = this.chooseOne.bind(this)
-    }
-
-    chooseOne(event){
-
+        // this.save = this.save.bind(this)
     }
 
 
@@ -37,21 +33,28 @@ class App extends React.Component{
     };
 
 
-    add(event){
+    add(){
         this.setState({
             options: this.state.options +1,
-            input: event.target.value
         });
      };
+    //
+    // save(event){
+    //     this.setState({
+    //         input: event.target.value
+    //     });
+    //     const values = [];
+    //     values.push(this.state.input);
+    //     console.log(values);
+    //
+    // }
+
 
     render() {
         const inputs = [];
-        const values = [];
         for(let i = 0; i < this.state.options; i++){
-            inputs.push(<input placeholder={"Enter option"} value={this.state.input} onChange={this.add} />);
-            values.push(this.state.input)
+            inputs.push(<input placeholder={"Enter option"} />);
         }
-console.log(values);
 
         if (!this.state.visibility) {
             return (
@@ -86,3 +89,29 @@ console.log(values);
     }
 
  export default App;
+
+
+{/*<script>*/}
+    {/*$(function () {*/}
+    {/*$('.resultSection').hide();*/}
+
+    {/*var add_option = function () {*/}
+    {/*$('.inputs').append('<input/>')*/}
+{/*};*/}
+    {/*$('.addOption').click(add_option);*/}
+
+    {/*var options = [];*/}
+
+    {/*var submit = function() {*/}
+    {/*$('.inputSection').hide();*/}
+    {/*$('.resultSection').css('display', 'flex');*/}
+    {/*$('input').each(function () {*/}
+    {/*options.push($(this).val())*/}
+{/*})*/}
+
+    {/*var winner = options[Math.floor(Math.random() * options.length)];*/}
+    {/*$('.resultSection').text(winner)*/}
+{/*};*/}
+    {/*$('.submit').click(submit)*/}
+{/*})*/}
+{/*</script>*/}
