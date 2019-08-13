@@ -33,7 +33,7 @@ padding: 10px;
 
 .inputs {
 padding: 10px;
-    background: springgreen;
+    background: rgba(0, 255, 119, 0.1);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -41,13 +41,14 @@ padding: 10px;
     height: inherit;
 }
 
-input {
+input{
     flex-wrap: wrap;
     width: 100px;
   height: 30px;
     margin: 10px;
-    border-radius: 10px;
-    font-size: 1em;
+    border:none;
+    border-bottom: 4px solid #8843d5;
+    font-size: 0.8em;
 }
 
 .addOption {

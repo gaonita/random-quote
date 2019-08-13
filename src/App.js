@@ -10,12 +10,14 @@ class App extends React.Component{
             visibility: false,
             options: 1,
             result : '',
-            input:''
+            input:'',
+            values: {}
         };
 
         this.toggle = this.toggle.bind(this);
         this.add = this.add.bind(this);
-        // this.save = this.save.bind(this)
+        this.save = this.save.bind(this);
+        this.reset= this.reset.bind(this);
     }
 
 
@@ -38,22 +40,32 @@ class App extends React.Component{
             options: this.state.options +1,
         });
      };
-    //
-    // save(event){
-    //     this.setState({
-    //         input: event.target.value
-    //     });
-    //     const values = [];
-    //     values.push(this.state.input);
-    //     console.log(values);
-    //
-    // }
+
+    save(event){
+        const id = event.target.getAttribute("data-id");
+        this.state.values[id] = event.target.value;
+
+        this.setState({
+            values: this.state.values
+        })
+    }
+
+    reset(){
+        this.setState({
+            visibility: false,
+            options: 1,
+            result : '',
+            input:'',
+            values: {}
+        })
+    }
 
 
     render() {
+        const winner = this.state.values[Math.floor(Math.random() * Object.keys(this.state.values).length)];
         const inputs = [];
         for(let i = 0; i < this.state.options; i++){
-            inputs.push(<input placeholder={"Enter option"} />);
+            inputs.push(<input data-id={i} key={i} placeholder={"Enter option"} onChange={this.save} />);
         }
 
         if (!this.state.visibility) {
@@ -67,7 +79,7 @@ class App extends React.Component{
                         <div className="inputs">
                             {inputs}
                         </div>
-                        <button className="addOption" onClick={this.add}>Add option</button>
+                        <button className="addOption" onClick={this.add} >Add option</button>
 
                     </div>
 
@@ -78,10 +90,14 @@ class App extends React.Component{
             return(
                 <>
                     <div className={"title"}>
-                        <h1>This is the one!</h1>
+                        <h3>The Winner is</h3>
                     </div>
-                    <div className="resultSection">Result</div>
-                    <button className="submit">Go Back</button>
+
+                    <div className="resultSection">
+                         {winner}
+                    </div>
+
+                    <button className="submit" onClick={this.reset}>Go Back</button>
                 </>
             )
         }
@@ -89,29 +105,3 @@ class App extends React.Component{
     }
 
  export default App;
-
-
-{/*<script>*/}
-    {/*$(function () {*/}
-    {/*$('.resultSection').hide();*/}
-
-    {/*var add_option = function () {*/}
-    {/*$('.inputs').append('<input/>')*/}
-{/*};*/}
-    {/*$('.addOption').click(add_option);*/}
-
-    {/*var options = [];*/}
-
-    {/*var submit = function() {*/}
-    {/*$('.inputSection').hide();*/}
-    {/*$('.resultSection').css('display', 'flex');*/}
-    {/*$('input').each(function () {*/}
-    {/*options.push($(this).val())*/}
-{/*})*/}
-
-    {/*var winner = options[Math.floor(Math.random() * options.length)];*/}
-    {/*$('.resultSection').text(winner)*/}
-{/*};*/}
-    {/*$('.submit').click(submit)*/}
-{/*})*/}
-{/*</script>*/}
