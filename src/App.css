@@ -1,39 +1,38 @@
 
-
-#root {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  background-color: #FAFAFA;
+.background {
+    height: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://images.unsplash.com/photo-1525268771113-32d9e9021a97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
 
 .title {
-  width: 100%;
-  text-align: center;
-  font-weight: lighter;
-  font-size: 1.5em;
-  letter-spacing: 2px;
-  color: deeppink;
+    width: 100%;
+    margin-top: 70px;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    color: deeppink;
 }
 
-
 .inputSection {
-
-
-padding: 10px;
+    padding: 10px;
     display: flex;
-
-  max-height: 200vh;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+    max-height: 200vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .inputs {
-padding: 10px;
-    background: rgba(0, 255, 119, 0.1);
+    padding: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -41,44 +40,81 @@ padding: 10px;
     height: inherit;
 }
 
-input{
+button:focus {outline:0;}
+
+
+input {
     flex-wrap: wrap;
     width: 100px;
-  height: 30px;
+    height: 30px;
     margin: 10px;
-    border:none;
+    border: none;
     border-bottom: 4px solid #8843d5;
     font-size: 0.8em;
 }
 
+input:focus {outline: 0}
+
 .addOption {
-  width: 100px;
-  height: 30px;
-  margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
     margin-left: 10px;
-  border: solid 2px deepskyblue;
-  color: deepskyblue;
-  font-weight: bold;
-  font-size: 15px;
-  text-align: center;
-  align-self: flex-end;
+    border: solid 2px deepskyblue;
+    color: deepskyblue;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    align-self: flex-end;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+
+.resultContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.congrats {
+    color: yellow;
+    max-width: 40%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 75px;
+    font-weight: bold;
+    background-position: center;
 }
 
 .resultSection {
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 35px;
+    color: black;
+    width: 500px;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 55px;
+    font-weight: bold;
 }
 
 .submit {
-    margin-top: 30px;
-  width: 100px;
-  height: 50px;
-  color:deeppink;
-  font-weight: bold;
-  font-size: 1em;
-  border: solid 2px deeppink;
+    width: 100px;
+    height: 50px;
+    color: deeppink;
+    font-weight: bold;
+    font-size: 1em;
+    border: none;
     align-items: center;
+    align-self: center;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    height: 500px;
 }
